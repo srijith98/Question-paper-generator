@@ -46,5 +46,11 @@ for quizNum in range(35):
     states=list(stateCapitals.keys())
     random.shuffle(states)
 
-    
+    for questionNum in range(29):
+        correctAnswer = stateCapitals[states[questionNum]]
+        wrongAnswers = list(stateCapitals.values())
+        del wrongAnswers[wrongAnswers.index(correctAnswer)]
+        wrongAnswers = random.sample(wrongAnswers,3)
+        answerOptions = wrongAnswers + [correctAnswer]
+        random.shuffle(answerOptions)
 
